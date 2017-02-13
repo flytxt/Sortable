@@ -782,7 +782,9 @@
 					}
 					else {
 						// Remove clone
-						cloneEl && cloneEl.parentNode.removeChild(cloneEl);
+						if (cloneEl && cloneEl.parentNode) {
+							cloneEl.parentNode.removeChild(cloneEl);
+						}
 
 						if (dragEl.nextSibling !== nextEl) {
 							// Get the index of the dragged element within its parent
